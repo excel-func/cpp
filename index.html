@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online C++ Compiler</title>
+    <style>
+        html,
+        body {
+            background-color: #1e1e1e !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            overflow: hidden;
+        }
+        
+        #root {
+            opacity: 0;
+        }
+        
+        .container,
+        #root,
+        .wrapper {
+            max-width: 100%;
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="https://cdn.playground-v2.programiz.com/assets/icons/cpp.svg">
+    <link rel="stylesheet" href="https://fonts.programiz.com/fonts.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+    <link rel="canonical" href="https://www.programiz.com/cpp-programming/online-compiler/" />
+
+    <script>
+        var url = window.location.href;
+        window.googletag = window.googletag || {
+            cmd: []
+        };
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.playground-v2.programiz.com/build/styles.94017793f7f1bebc8d88.css" />
+
+    <style>
+        .hidden {
+            display: none !important;
+        }
+        
+        .header,
+        .compiler-right-sidebar-ad,
+        .compiler-header-ad,
+        #div-gpt-ad-Programizcom36786,
+        #programizcom47802,
+        .right-ad-container {
+            display: none !important;
+        }
+        
+        .wrapper {
+            display: flex !important;
+            flex-direction: row !important;
+        }
+        
+        .editor-wrapper {
+            width: 50% !important;
+            height: 100vh !important;
+            flex-shrink: 0;
+        }
+        
+        .terminal-wrapper {
+            width: 50% !important;
+            height: 100vh !important;
+            position: relative !important;
+            right: 0 !important;
+            flex-grow: 1;
+            border-left: 1px solid #333 !important;
+        }
+        
+        #editor,
+        #terminal {
+            width: 100% !important;
+            height: calc(100% - 40px) !important;
+        }
+        
+        .terminal-desktop-top-bar {
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+        
+        .loaded #root {
+            opacity: 1;
+            transition: opacity 0.2s ease-in;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container" id="root" data-lang="cpp">
+        <div class="spinner">
+            <div class="loader"><span>{</span><span>}</span></div>
+        </div>
+        <div class="mobile-nav-drawer">
+            <div class="nav-backdrop"></div>
+            <div class="nav-menu">
+                <div class="nav-header-wrapper">
+                    <div class="nav-logo-title-wrapper">
+                        <a href="https://www.programiz.com/" target="_blank" class="nav-logo-link">
+                            <img id="nav-logo" src="https://cdn.playground-v2.programiz.com/assets/logos/logo.svg" />
+                        </a>
+                    </div>
+                    <button type="button" class="close-nav-btn" title="Close navigation">
+                        <img class="svg" src="https://cdn.playground-v2.programiz.com/assets/icons/close.svg" />
+                    </button>
+                </div>
+                <div class="nav-menu-list">
+                    <a target="_blank" href="https://www.programiz.com/cpp-programming/online-compiler/" class="change-lang-row cpp active" title="Online C++ Compiler">
+                        <span class="change-lang-btn">
+                            <img class="change-lang-btn-icon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/cpp.svg" alt="C++ Online" />
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="share-link-generating-modal" style="display: none;">
+            <div class="modal-backdrop-share"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Generating Link</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="header">
+                <div class="header-wrapper">
+                    <div class="burger-menu">
+                        <button type="button" class="burger-menu-btn" title="Open navigation">
+                            <img class="svg burger-menu-btn-icon" src="https://cdn.playground-v2.programiz.com/assets/icons/burger.svg" />
+                        </button>
+                    </div>
+                </div>
+                <div id="add-replacement"></div>
+            </div>
+
+            <div class="mobile-top-bar clearfix">
+                <div class="pills-wrapper">
+                    <div class="pills clearfix">
+                        <button class="pill active compiler-pill" id="executed-file-name-mobile" title="main.cpp">main.cpp</button>
+                        <button class="pill shell-pill">Output</button>
+                    </div>
+                </div>
+                <div class="options-wrapper">
+                    <div id="toggle-dark-mode-mobile" class="options-item-wrapper clearfix">
+                        <img class="toggle-dark-mode-mobile-icon moon svg options-item" src="https://cdn.playground-v2.programiz.com/assets/icons/moon.svg" />
+                        <img class="toggle-dark-mode-mobile-icon sun svg options-item" src="https://cdn.playground-v2.programiz.com/assets/icons/sun.svg" />
+                    </div>
+                    <button class="share-button-mob" title="Share">
+                        <img class="svg share-icon" src="https://cdn.playground-v2.programiz.com/assets/icons/share.svg" />
+                    </button>
+                </div>
+                <div class="other-options-wrapper">
+                    <div class="mobile-top-bar-run-button run">
+                        <img src="https://cdn.playground-v2.programiz.com/assets/icons/play.svg" alt="run-icon" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="editor-wrapper">
+                <div class="editor-desktop-top-bar">
+                    <div class="file-name" id="executed-file-name" title="main.cpp">main.cpp</div>
+                    <div class="desktop-top-bar__btn-wrapper">
+                        <button type="button" id="toggle-expanded-mode-desktop" title="Enter Fullscreen">
+                            <img class="toggle-expanded-mode-mobile-icon expand svg" src="https://cdn.playground-v2.programiz.com/assets/icons/expand.svg" />
+                            <img class="toggle-expanded-mode-mobile-icon minimize hidden svg" src="https://cdn.playground-v2.programiz.com/assets/icons/minimize.svg" />
+                        </button>
+                        <button type="button" id="toggle-dark-mode-desktop" title="Toggle dark mode">
+                            <img class="toggle-dark-mode-mobile-icon moon svg" src="https://cdn.playground-v2.programiz.com/assets/icons/moon.svg" />
+                            <img class="toggle-dark-mode-mobile-icon sun svg" src="https://cdn.playground-v2.programiz.com/assets/icons/sun.svg" />
+                        </button>
+                        <button class="share-button tablet-share" title="Share">
+                            <img class="toggle-expanded-mode-mobile-icon svg share-icon" src="https://cdn.playground-v2.programiz.com/assets/icons/share.svg" />
+                        </button>
+                        <button class="desktop-run-button run">
+                            <span class="run-text">&nbsp;Run&nbsp;</span>
+                        </button>
+                    </div>
+                </div>
+                <button class="mobile-run-button run">Run</button>
+                <div id="editor">#include &lt;iostream&gt;
+
+int main() {
+    std::cout << "try c++ compiler by excel-func.github.io's creator Abdurayim";
+    return 0;
+}</div>
+            </div>
+
+            <div class="terminal-wrapper">
+                <div class="terminal-desktop-top-bar">
+                    <div class="shell-name">Output</div>
+                    <div class="terminal-desktop-top-bar__btn-wrapper">
+                        <button class="desktop-clear-button">&nbsp;Clear&nbsp;</button>
+                    </div>
+                </div>
+                <div id="terminal"></div>
+            </div>
+        </div>
+    </div>
+
+    <script defer type="text/javascript">
+        const lang = "cpp";
+        const challengeLinkProbability = 0 / 100;
+        const hasChallengeLinkAsAds = Math.random() <= challengeLinkProbability;
+    </script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.41.0/ace.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script defer src="https://cdn.playground-v2.programiz.com/build/final.bb49e05630288743055e.js"></script>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKXT7MH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener('load', function() {
+            document.getElementById('root').style.visibility = 'visible';
+        });
+    </script>
+    <script>
+        document.getElementById('toggle-expanded-mode-desktop').addEventListener('click', function() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    alert(`Ошибка при переходе в полноэкранный режим: ${err.message}`);
+                });
+                this.querySelector('.expand').classList.add('hidden');
+                this.querySelector('.minimize').classList.remove('hidden');
+            } else {
+                document.exitFullscreen();
+                this.querySelector('.expand').classList.remove('hidden');
+                this.querySelector('.minimize').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
